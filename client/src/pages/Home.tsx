@@ -110,7 +110,7 @@ export default function Home() {
           {categories.map((category) => (
             <Card key={category.name} className="hover-lift card-shadow cursor-pointer">
               <CardContent className="p-6 text-center">
-                <div className={w-16 h-16 ${category.color} rounded-full flex items-center justify-center mx-auto mb-4}>
+                <div className={"w-16 h-16 " + category.color + " rounded-full flex items-center justify-center mx-auto mb-4"}>
                   <category.icon className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-lg font-semibold mb-2 text-gray-900">{category.name}</h3>
@@ -126,7 +126,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 font-roboto">
-              {searchQuery ? Search Results for "${searchQuery}" : "Popular Medical Apps"}
+              {searchQuery ? "Search Results for \"" + searchQuery + "\"" : "Popular Medical Apps"}
             </h2>
             {!searchQuery && (
               <Button variant="outline" className="text-blue-600 hover:text-blue-700">
