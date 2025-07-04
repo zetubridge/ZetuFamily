@@ -108,16 +108,16 @@ export default function Home() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {categories.map((category) => (
-            <Card key={category.name} className="hover-lift card-shadow cursor-pointer">
-              <CardContent className="p-6 text-center">
-                <div className={"w-16 h-16 " + category.color + " rounded-full flex items-center justify-center mx-auto mb-4"}>
-                  <category.icon className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-lg font-semibold mb-2 text-gray-900">{category.name}</h3>
-                <p className="text-gray-600 text-sm">{category.description}</p>
-              </CardContent>
-            </Card>
-          ))}
+  <Card key={category.name} className="hover-lift card-shadow cursor-pointer">
+    <CardContent className="p-6 text-center">
+      <div className={"w-16 h-16 " + category.color + " rounded-full flex items-center justify-center mx-auto mb-4"}>
+        <category.icon className="w-8 h-8 text-white" />
+      </div>
+      <h3 className="text-lg font-semibold mb-2 text-gray-900">{category.name}</h3>
+      <p className="text-gray-600 text-sm">{category.description}</p>
+    </CardContent>
+  </Card>
+))}
         </div>
       </section>
 
