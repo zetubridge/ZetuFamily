@@ -23,7 +23,6 @@ export default function Home() {
       const res = await api.get("/api/apps");
       return res.data as App[];
     },
-    select: (data) => data,
   });
 
   const filteredApps = apps?.filter(app =>
@@ -67,6 +66,7 @@ export default function Home() {
     <div className="min-h-screen bg-gray-50">
       <Header onSearch={handleSearch} />
 
+      {/* Hero Section */}
       <section className="gradient-bg text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fade-in">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 font-roboto">
@@ -96,8 +96,10 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Featured App */}
       {featuredApp && <FeaturedApp app={featuredApp} />}
 
+      {/* Categories */}
       <section className="py-16 bg-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-4 font-roboto">Browse by Category</h2>
@@ -119,6 +121,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Apps */}
       <section id="apps-section" className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center mb-12">
@@ -182,6 +185,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Developer CTA */}
       <section className="py-16 gradient-bg text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold mb-4 font-roboto">Publish Your Medical App</h2>
