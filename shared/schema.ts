@@ -66,16 +66,17 @@ export const paymentSchema = z.object({
   developerId: z.string(),
   amount: z.number().default(1000), // KES 1,000
   currency: z.string().default("KES"),
+  reference: z.string(),
   status: z.enum(["pending", "completed", "failed"]).default("pending"),
   paystackReference: z.string(),
   createdAt: z.date(),
-  completedAt: z.date().optional(),
+  updatedAt: z.date(),
 });
 
 export const insertPaymentSchema = paymentSchema.omit({
   id: true,
   createdAt: true,
-  completedAt: true,
+  updatedAt: true,
 });
 
 // Types
