@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "wouter";
+import { useQuery } from "@tanstack/react-query";
 import { Download, Upload, Stethoscope, Heart, Pill, Brain, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -7,32 +8,27 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AppCard from "@/components/AppCard";
 import FeaturedApp from "@/components/FeaturedApp";
-// import LoadingSpinner from "@/components/LoadingSpinner"; // Not used here
-// import { useQuery } from "@tanstack/react-query";
-// import { api } from "@/lib/api";
 import { App } from "@shared/schema";
 
 export default function Home() {
   const [searchQuery, setSearchQuery] = useState("");
 
-  // Dummy data for testing instead of useQuery
-  const apps: App[] = [
-    { id: 1, name: "Med-A", description: "Test app for medical education", category: "Medical Education" },
-    { id: 2, name: "Health Tracker", description: "Track your health", category: "Health Monitoring" },
-    { id: 3, name: "Pharma Guide", description: "Drug reference and dosage", category: "Pharmacy" },
-    { id: 4, name: "Anatomy 3D", description: "3D models and references", category: "Anatomy" },
-  ];
-  const isLoading = false;
-  const error = null;
+  // Use React Query with your queryClient's default queryFn
+  const { data: apps, isLoading, error } = useQuery<App[]>({
+    queryKey: ["/api/apps"],
+  });
 
+  // Filter apps based on search query
   const filteredApps = apps?.filter(app =>
     app.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
     app.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
     app.category.toLowerCase().includes(searchQuery.toLowerCase())
   ) || [];
 
+  // Select featured app
   const featuredApp = apps?.find(app => app.name.toLowerCase().includes("med-a")) || apps?.[0];
 
+  // Categories data
   const categories = [
     {
       name: "Medical Education",
@@ -143,7 +139,7 @@ export default function Home() {
 
           {isLoading ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-              {/* You can keep your loading skeleton here if you want */}
+              {/* Loading skeleton or spinner can go here */}
             </div>
           ) : error ? (
             <div className="text-center py-12">
@@ -208,4 +204,5 @@ export default function Home() {
     </div>
   );
 }
+
 
