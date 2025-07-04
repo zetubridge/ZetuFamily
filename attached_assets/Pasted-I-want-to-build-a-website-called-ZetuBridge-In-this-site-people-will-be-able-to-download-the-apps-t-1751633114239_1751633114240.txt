@@ -1,0 +1,21 @@
+I want to build a website called ZetuBridge. In this site people will be able to download the apps that I'll publish in it..so all apps will be described with their download but like this app for Kenya Medical Training College students called Medical Archives (MED-A);
+
+Android app: MED-A, Welcome to MED-A! Your go-to app for accessing past exam papers from Kenya Medical Training College (KMTC). Whether you're a KMTC student or enrolled in a private institution offering courses like nursing and more, MED-A is here to support your studies with valuable resources to help you succeed. Start exploring and enhance your learning experience today!"✨ Welcome to MED-A – Your Ultimate Medical Digital Library! 📖💡 Access KMTC past papers,anatomy videos, 3D views, medical books                            notes, and AI-assisted learning! Download url inside the button: https://apk.e-droid.net/apk/app3179519-tbdlv2.apk?v=7
+
+
+In this site, there will be a section where someone can purplish an app in my site, he will fill the all name, the download url and the logo url that it will display. And Also the description of the app that the user will see including the url of atleast 4 screenshots of the app and the urls should not look the same. When publishing the user will be charged KES 15,000 to publish the app. Payment will be processed through paystack and the Paystack will be verifying the payment to store the information on my database.
+
+I'll use Firebase database as my database meaning all these information will be stored on firebase then I'll use render.com as my server... If the user published the app it will tell him pending then in my Firebase it will be recorded as disabled untill I turn it enabled then it will be published and the user will see on his end published.
+
+So in render environment variables I'll create two keys;
+Paystack secret key and firebase _config
+
+Meaning I'll download the firebase details and paste the entire details on render environment variables keys.
+
+I want it to be exactly the duplicate of Google play store.
+
+Then it should be a simple app with few codes... 
+
+This side is mostly development due to Med-A app so ensure it appears the first one written, Recommended for KMTC students (medical students)
+
+Use beautiful Google fonts, colors, animations..make it appealing
