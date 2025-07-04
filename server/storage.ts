@@ -220,8 +220,5 @@ export class FirebaseStorage implements IStorage {
   }
 }
 
-import { MockStorage } from './mock-storage';
-
-// Use MockStorage temporarily while Firebase is being set up
-// export const storage = new FirebaseStorage();
-export const storage = new MockStorage();
+// Switch to Firebase now that database is set up
+export const storage = new FirebaseStorage();
